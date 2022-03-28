@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+            <h1>Choose the department and confirm</h1>
+            <div class="mt-2">
+                <br>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Department</label>
+                    <div class="col-sm-10">
+                        <select class="form-control" id="department-id">
+                            <option value="">-- Department --</option>
+                            {% for department in departments %}
+                                <option value="{{ department.id }}">{{ department.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <br><br>
+                <div class="form-group">
+                    <a class="btn btn-info" target="_blank" onclick="getData()">Get Data</a>
+                </div>
+            </div>
+    <script>
+        function getData() {
+            var depId = document.getElementById("department-id").value;
+            if(depId !== "") {
+                var link = '{{ path("api_students_by_department", {'id': 'department_id'}) }}';
+                link = link.replace("department_id", depId);
+                window.open(link, '_blank', 'location=yes,height=570,width=520,scrollbars=yes,status=yes');
+            } else {
+                alert('No department selected');
+            }
+        }
+    </script>
+{% endblock %}

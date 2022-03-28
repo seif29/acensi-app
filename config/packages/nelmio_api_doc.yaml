@@ -1,0 +1,8 @@
+nelmio_api_doc:
+    areas:
+        default:
+            path_patterns: [ ^/api ]
+        custom:
+            path_patterns: [ ^/custom ]
+        another_custom:
+            path_patterns: [ ^/anothercustom ]

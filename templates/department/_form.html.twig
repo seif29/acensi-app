@@ -1,0 +1,25 @@
+<div class="mt-2">
+    {{ form_start(form, { 'attr': {'class': 'form-horizontal'} }) }}
+
+        <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">{{ form_label(form.name) }}</label>
+                <div class="col-sm-10">
+                        {{ form_widget(form.name, { 'attr': {'class': 'form-control'} }) }}
+                        <small class="help-block" style="color: red">{{ form.name.vars.errors|replace({'ERROR: ' : ''}) }}</small>
+                </div>
+        </div>
+        <br>
+
+        <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">{{ form_label(form.capacity) }}</label>
+                <div class="col-sm-10">
+                        {{ form_widget(form.capacity, { 'attr': {'class': 'form-control'} }) }}
+                        <small class="help-block" style="color: red">{{ form.capacity.vars.errors|replace({'ERROR: ' : ''}) }}</small>
+                </div>
+        </div>
+        <br>
+
+        {{ form_widget(form) }}
+        <button class="btn btn-success">{{ button_label|default('Save') }}</button>
+    {{ form_end(form) }}
+</div>

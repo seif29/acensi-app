@@ -1,0 +1,39 @@
+<div class="mt-2">
+    {{ form_start(form, { 'attr': {'class': 'form-horizontal'} }) }}
+
+        <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">{{ form_label(form.firstName) }}</label>
+            <div class="col-sm-10">
+                {{ form_widget(form.firstName, { 'attr': {'class': 'form-control'} }) }}
+                <small class="help-block" style="color: red">{{ form.firstName.vars.errors|replace({'ERROR: ' : ''}) }}</small>
+            </div>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="inputPassword3" class="col-sm-2 control-label">{{ form_label(form.lastName) }}</label>
+            <div class="col-sm-10">
+                {{ form_widget(form.lastName, { 'attr': {'class': 'form-control'} }) }}
+                <small class="help-block" style="color: red">{{ form.lastName.vars.errors|replace({'ERROR: ' : ''}) }}</small>
+            </div>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="inputPassword3" class="col-sm-2 control-label">{{ form_label(form.numEtud) }}</label>
+            <div class="col-sm-10">
+                {{ form_widget(form.numEtud, { 'attr': {'class': 'form-control'} }) }}
+                <small class="help-block" style="color: red">{{ form.numEtud.vars.errors|replace({'ERROR: ' : ''}) }}</small>
+            </div>
+        </div>
+        <br>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">{{ form_label(form.department) }}</label>
+            <div class="col-sm-10">
+                {{ form_widget(form.department, { 'attr': {'class': 'form-control'} }) }}
+                <small class="help-block" style="color: red">{{ form.department.vars.errors|replace({'ERROR: ' : ''}) }}</small>
+            </div>
+        </div>
+        <br>
+        {{ form_widget(form) }}
+        <button class="btn btn-success">{{ button_label|default('Save') }}</button>
+    {{ form_end(form) }}
+</div>

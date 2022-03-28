@@ -1,0 +1,40 @@
+App\Entity\Student:
+  properties:
+    firstName:
+      - NotBlank: ~
+      - Length:
+          min: 2
+          max: 25
+          minMessage: 'Your first name must be at least {{ limit }} characters long'
+          maxMessage: 'Your first name cannot be longer than {{ limit }} characters'
+    lastName:
+      - NotBlank: ~
+      - Length:
+          min: 2
+          max: 25
+          minMessage: 'Your last name must be at least {{ limit }} characters long'
+          maxMessage: 'Your last name cannot be longer than {{ limit }} characters'
+    numEtud:
+      - NotBlank: ~
+      - Length:
+          min: 10
+          max: 10
+          minMessage: 'Your nul etud must be at least {{ limit }} characters long'
+          maxMessage: 'Your nul etud cannot be longer than {{ limit }} characters'
+
+App\Entity\Department:
+  properties:
+    name:
+      - NotBlank: ~
+      - Length:
+          min: 2
+          max: 25
+          minMessage: 'The name must be at least {{ limit }} characters long'
+          maxMessage: 'The name cannot be longer than {{ limit }} characters'
+    capacity:
+      - NotBlank: ~
+      - Length:
+          min: 1
+          max: 10
+          minMessage: 'Your capacity must be at least {{ limit }} characters long'
+          maxMessage: 'Your capacity cannot be longer than {{ limit }} characters'
